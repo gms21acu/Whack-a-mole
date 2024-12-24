@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #4f2170;
+    color: #fff;
+    text-align: center;
+    cursor: none;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: #c5c6c8;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+                inset 0 20px 20px 15px rgba(0, 0, 0, 0.3),
+                0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.mole, .goldenMole, .badMole {
+    z-index: 2;
+}
+
+.mole {
+    width: 100px;
+    height: 100px;
+    background: url('assets/reeves.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.goldenMole {
+    width: 100px;
+    height: 100px;
+    background: url('assets/golden-reeves.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.badMole {
+    width: 100px;
+    height: 100px;
+    background: url('assets/bad-reeves.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+#hammer {
+    width: 80px;
+    height: 80px;
+    background: url('assets/hammer.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    pointer-events: none;
+    transform: rotate(-45deg);
+    transition: transform 0.1s ease;  /* Smooth transition for rotation */
+    z-index: 1000;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #c5c6c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5e1c6b;
+}
+
+#timer, #score, #playerId {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#playerId {
+    font-weight: bold;
+}
+
+#highScores {
+    margin-top: 30px;
+    color: white;
+}
+
+#scoreList {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+#scoreList li {
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+}
+
+#scoreList li:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#scoreList li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* For responsive design */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    #hammer {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #timer, #score, #playerId {
+        font-size: 18px;
+    }
+
+    #highScores {
+        margin-top: 20px;
+    }
+}
+
+#hammer {
+    width: 80px;
+    height: 80px;
+    background: url('assets/hammer.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    pointer-events: none;
+    transform: rotate(-45deg);
+    transition: transform 0.1s ease;
+    z-index: 1000;
+}
